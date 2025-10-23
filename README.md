@@ -3,3 +3,6 @@
 >
 >原项目地址：[机械臂数字孪生项目](https://x509p6c8to.feishu.cn/docx/FeMndRrzRommxGxTkFscJ0zKnKh)
 >
+>在此感谢原项目作者小智，阿奇的杰出工作
+## 项目预览
+![项目展示]("C:\Users\GUOJUNJIE\Desktop\1.jpg")
