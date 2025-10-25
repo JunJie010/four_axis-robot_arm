@@ -119,6 +119,10 @@ PWM(Pulse Width Modulation)脉冲宽度调制，在具有惯性的系统中，�
 此处由于引入了ESP32Servo标准库，可以直接用舵机标准库函数对舵机角度进行控制
 ```
 #include <ESP32Servo.h>               //引入舵机标准库函数
+Servo servo;                          //定义舵机变量
+servo.setPeriodHertz(50);             //舵机频率初始化函数;
+servo.attach(servo_pin,500,2500);     //舵机的初始化参数配置，已对引脚进行配置,参数为引脚，最小微秒，最大微秒
+servo.write(45);                      //舵机角度控制函数,参数为舵机角度
 ```
 
 ***
