@@ -154,7 +154,21 @@ void Servo_motor_run(uint8_t a,uint8_t b,uint8_t c,uint8_t d)         //定义�
 采用蓝牙模块，由于项目与控制端距离近，控制方便简单，故此处采用BLE(低功耗蓝牙)
 在BLE通信模式中，存在两类设备：BLE服务端和BLE客户端，通信时，BLE服务端向外发送信号，可以被附件BLE客户端发现，一个BLE客户端可以连接特定的服务端，然后读取服务端发送的信号数据
 BLE不但支持点对点传输，还支持广播模式，还可以组建Mesh网络
+```
+#include <BLEDevice.h>
+#include <BLE2902.h>              //引进相关蓝牙通讯协议
 
+#define SERVICE_UUID "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
+#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"       //完整的128位UUID码
+
+BLECharacteristic *pCharacteristic = NULL;            //创建特征Characteristic
+bool bleConnected = false;                            //定义布尔型变量用于判断蓝牙是否连接
+
+class bleServerCallbacks : public BLEServerCallbacks                     //Server回调函数声明，并用串口打印设备的连接状况
+class bleCharacteristicCallbacks : public BLECharacteristicCallbacks      //客户端回调函数声明，用于客户端读取事件和写入事件
+void BLE_Init()                   //定义初始化蓝牙函数，创建BLE蓝牙设备，创建服务器，设置设备的模式为BLE Server，创建服务，启动服务并开启广播
+//注意，此处只做简单展示，详细代码请看控制代码
+```
 
 
 
