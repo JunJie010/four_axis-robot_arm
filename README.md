@@ -124,6 +124,7 @@ Servo servo;                          //定义舵机变量
 servo.setPeriodHertz(50);             //舵机频率初始化函数;
 servo.attach(servo_pin,500,2500);     //舵机的初始化参数配置，已对引脚进行配置,参数为引脚，最小微秒，最大微秒
 servo.write(45);                      //舵机角度控制函数,参数为舵机角度
+//注意，此处只做简单展示，详细代码请看控制代码
 ```
 单舵机的控制较为简单，引入多舵机后需要分别控制各个舵机的角度，可以利用定时器定时功能，每隔一段时间进行一次角度判断函数，当舵机的set和now不同时，舵机转动，并且每转动一次对now加以修正
 所以只需要对set值修改就可以驱动舵机转动到相应角度，同时，定时器计时频率可以改变舵机的转动速度，实现多舵机的速度控制
@@ -145,6 +146,7 @@ void timer_speed(uint8_t x)      //舵机速度控制函数，原理是利用定
 void timer_back()                //定义舵机now修正函数，在舵机运动到指定位置后，修正now为当前值，避免一直运动
 uint8_t Servo_run(uint8_t x,uint8_t set_angle,uint8_t now_angle)         //定义舵机驱动函数，当set和now不同时，舵机驱动
 void Servo_motor_run(uint8_t a,uint8_t b,uint8_t c,uint8_t d)         //定义多舵机控制函数，给set值
+//注意，此处只做简单展示，详细代码请看控制代码
 ```
 
 
